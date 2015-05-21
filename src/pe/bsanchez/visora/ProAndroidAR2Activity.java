@@ -1,4 +1,4 @@
-package com.paar.ch2;
+package pe.bsanchez.visora;
 
 import android.app.Activity;
 import android.hardware.Camera;
