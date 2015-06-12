@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils.TruncateAt;
 import android.view.Gravity;
@@ -27,13 +26,15 @@ import com.geomobile.arcore.utils.VisionUtils;
 
 public class CustomGeoPoi extends VisionGeoPoi {
 
+	private static final long serialVersionUID = -6778548523953079532L;
 	private String poiRating;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public LinearLayout getPanelTextureLayout(Context ctx) {
 		// TODO Auto-generated method stub
 		float density = VisionCore.core.configuration.getScreenDensity();
-		
+
 		LinearLayout lay = new LinearLayout(ctx);
 		lay.setOrientation(LinearLayout.VERTICAL);
 		lay.setLayoutParams(new LinearLayout.LayoutParams(256, 128));
@@ -42,7 +43,8 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		lay.layout(0, 0, 256, 128);
 
 		TextView vista = new TextView(ctx);
-		vista.setLayoutParams(new LinearLayout.LayoutParams(180, LayoutParams.WRAP_CONTENT));
+		vista.setLayoutParams(new LinearLayout.LayoutParams(180,
+				LayoutParams.WRAP_CONTENT));
 		vista.setTextColor(0xffffffff);
 		vista.setTextSize((int) (25 / density));
 		vista.setText(this.title);
@@ -50,21 +52,21 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		vista.setMaxLines(2);
 		vista.layout(40, 5, 210, 100);
 		lay.addView(vista);
-		
+
 		LinearLayout top = new LinearLayout(ctx);
 		top.setOrientation(LinearLayout.HORIZONTAL);
-		top.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 56));
+		top.setLayoutParams(new LinearLayout.LayoutParams(
+				LayoutParams.FILL_PARENT, 56));
 		top.layout(40, 70, 210, 155);
 		lay.addView(top);
 
-		
 		vista = new TextView(ctx);
 		vista.setText(VisionUtils.getDistanceToString(this.distance));
 		vista.layout(0, 0, 105, 40);
 		vista.setTextColor(0xffffffff);
 		vista.setTextSize((int) (20 / density));
 		top.addView(vista);
-		
+
 		vista = new TextView(ctx);
 		vista.setText(this.getPoiRating());
 		vista.layout(95, 0, 110, 40);
@@ -78,31 +80,36 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		icons.layout(110, 0, 200, 40);
 		top.addView(icons);
 
-
 		if (categories != null && categories.size() > 0) {
 			ImageView iv;
 			iv = new ImageView(ctx);
-			iv.setLayoutParams(new LayoutParams((int)(30/density),(int)(30/density)));
+			iv.setLayoutParams(new LayoutParams((int) (30 / density),
+					(int) (30 / density)));
 			iv.setScaleType(ScaleType.CENTER_INSIDE);
 			iv.setImageResource(R.drawable.logo_g);
 			icons.addView(iv);
 			iv.layout(0, 0, 30, 30);
 			int j = 0;
 			for (int i = 0; i < categories.size(); i++) {
-				if (categories.get(i).getIcon() != null && categories.get(i).getIcon().getImage(null, true, false, true) != null) {
+				if (categories.get(i).getIcon() != null
+						&& categories.get(i).getIcon()
+								.getImage(null, true, false, true) != null) {
 					iv = new ImageView(ctx);
-					iv.setLayoutParams(new LayoutParams((int)(30/density),(int)(30/density)));
+					iv.setLayoutParams(new LayoutParams((int) (30 / density),
+							(int) (30 / density)));
 					iv.setScaleType(ScaleType.CENTER_INSIDE);
-					iv.setImageDrawable(categories.get(i).getIcon().getImage(null, true, false, true));
+					iv.setImageDrawable(categories.get(i).getIcon()
+							.getImage(null, true, false, true));
 					icons.addView(iv);
-					iv.layout(30 * (j+1), 0, 35 * (j + 2) - 5, 30);
+					iv.layout(30 * (j + 1), 0, 35 * (j + 2) - 5, 30);
 					j++;
 				}
 			}
 		}// if
 		return lay;
 	}
-	
+
+	@SuppressWarnings("deprecation")
 	@Override
 	public LinearLayout getArrowTextureLayout(Context ctx) {
 		// TODO Auto-generated method stub
@@ -117,7 +124,8 @@ public class CustomGeoPoi extends VisionGeoPoi {
 
 		LinearLayout top = new LinearLayout(ctx);
 		top.setOrientation(LinearLayout.HORIZONTAL);
-		top.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 40));
+		top.setLayoutParams(new LinearLayout.LayoutParams(
+				LayoutParams.FILL_PARENT, 40));
 		top.layout(16, 16, 232, 72);
 		lay.addView(top);
 
@@ -136,7 +144,8 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		top.addView(vista);
 
 		vista = new TextView(ctx);
-		vista.setLayoutParams(new LinearLayout.LayoutParams(180, LayoutParams.WRAP_CONTENT));
+		vista.setLayoutParams(new LinearLayout.LayoutParams(180,
+				LayoutParams.WRAP_CONTENT));
 		vista.setTextColor(0xffffffff);
 		vista.setTextSize((int) (23 / density));
 		vista.setGravity(Gravity.CENTER);
@@ -148,18 +157,23 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		return lay;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public View drawInfoPanel(Context ctx) {
 		RelativeLayout ll = new RelativeLayout(ctx);
-		LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-		p.setMargins(VisionUtils.scalePixels(10), VisionUtils.scalePixels(20), VisionUtils.scalePixels(10), 0);
+		LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		p.setMargins(VisionUtils.scalePixels(10), VisionUtils.scalePixels(20),
+				VisionUtils.scalePixels(10), 0);
 		ll.setLayoutParams(p);
 		ll.setGravity(Gravity.CENTER_VERTICAL);
-		ll.setPadding(VisionUtils.scalePixels(10), 0, VisionUtils.scalePixels(10), VisionUtils.scalePixels(20));
+		ll.setPadding(VisionUtils.scalePixels(10), 0,
+				VisionUtils.scalePixels(10), VisionUtils.scalePixels(20));
 		ll.setBackgroundDrawable(this.getInfoPanelBackground(ctx));
 
 		TextView rating = new TextView(ctx);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
 		params.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
 		params.setMargins(VisionUtils.scalePixels(5), 0, 0, 0);
@@ -170,14 +184,16 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		ll.addView(rating);
 
 		LinearLayout ll2 = new LinearLayout(ctx);
-		params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.WRAP_CONTENT);
 		ll2.setLayoutParams(params);
 		ll2.setOrientation(LinearLayout.VERTICAL);
 		ll2.setGravity(Gravity.CENTER);
 		ll.addView(ll2);
 
 		TextView distance = new TextView(ctx);
-		LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(
+				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		distance.setLayoutParams(params2);
 		distance.setTextColor(0xff333333);
 		distance.setTypeface(Typeface.DEFAULT_BOLD);
@@ -185,7 +201,8 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		ll2.addView(distance);
 
 		TextView title = new TextView(ctx);
-		params2 = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params2 = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
 		title.setLayoutParams(params2);
 		title.setTextColor(0xffffffff);
 		title.setTextSize(15);
@@ -196,13 +213,15 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		ll2.addView(title);
 
 		ImageView miniImage = new ImageView(ctx);
-		params = new RelativeLayout.LayoutParams(VisionUtils.scalePixels(25), VisionUtils.scalePixels(25));
+		params = new RelativeLayout.LayoutParams(VisionUtils.scalePixels(25),
+				VisionUtils.scalePixels(25));
 		params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
 		params.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
 		params.setMargins(0, 0, VisionUtils.scalePixels(5), 0);
 		miniImage.setLayoutParams(params);
 		miniImage.setScaleType(ScaleType.CENTER_INSIDE);
-		miniImage.setImageDrawable(ctx.getResources().getDrawable(R.drawable.logo_g));
+		miniImage.setImageDrawable(ctx.getResources().getDrawable(
+				R.drawable.logo_g));
 		ll.addView(miniImage);
 
 		return ll;
@@ -210,12 +229,13 @@ public class CustomGeoPoi extends VisionGeoPoi {
 
 	@Override
 	public View drawMapPopup(Context ctx) {
-		LinearLayout pop =(LinearLayout) View.inflate(ctx,R.layout.custom_info_window, null);
-		TextView title=(TextView)pop.findViewById(R.id.title);
+		LinearLayout pop = (LinearLayout) View.inflate(ctx,
+				R.layout.custom_info_window, null);
+		TextView title = (TextView) pop.findViewById(R.id.title);
 		title.setText(this.getTitle());
-		TextView subtitle=(TextView)pop.findViewById(R.id.subtitle);
+		TextView subtitle = (TextView) pop.findViewById(R.id.subtitle);
 		subtitle.setText(this.getSubtitle());
-		ImageView cat=(ImageView)pop.findViewById(R.id.cat);
+		ImageView cat = (ImageView) pop.findViewById(R.id.cat);
 		Vector<VisionCategory> cats = this.getCategories();
 		if (cats != null && cats.size() > 0) {
 			int i = 0;
@@ -231,33 +251,41 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		return pop;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public View drawListItem(Context ctx, View ll) {
 		ll = new LinearLayout(ctx);
-		ListView.LayoutParams listparams = new ListView.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		ListView.LayoutParams listparams = new ListView.LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 		ll.setLayoutParams(listparams);
-		ll.setPadding(VisionUtils.scalePixels(3), VisionUtils.scalePixels(3), VisionUtils.scalePixels(3), VisionUtils.scalePixels(3));
+		ll.setPadding(VisionUtils.scalePixels(3), VisionUtils.scalePixels(3),
+				VisionUtils.scalePixels(3), VisionUtils.scalePixels(3));
 		ll.setBackgroundColor(VisionCore.core.ar.backgroundColor);
 
 		LinearLayout lay = new LinearLayout(ctx);
-		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 		lay.setLayoutParams(params);
 		lay.setOrientation(LinearLayout.HORIZONTAL);
-		lay.setPadding(VisionUtils.scalePixels(10), 0, VisionUtils.scalePixels(30), 0);
+		lay.setPadding(VisionUtils.scalePixels(10), 0,
+				VisionUtils.scalePixels(30), 0);
 		lay.setGravity(Gravity.CENTER_VERTICAL);
 		((LinearLayout) ll).addView(lay);
 
 		ImageView remove = new ImageView(ctx);
-		params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
 		params.setMargins(0, 0, VisionUtils.scalePixels(5), 0);
 		remove.setLayoutParams(params);
 		remove.setScaleType(ScaleType.FIT_CENTER);
-		remove.setImageResource(VisionUtils.getResourceIdentifier("vision_icon_remove", "drawable"));
+		remove.setImageResource(VisionUtils.getResourceIdentifier(
+				"vision_icon_remove", "drawable"));
 		remove.setVisibility(View.GONE);
 		lay.addView(remove);
 
 		ImageView miniImage = new ImageView(ctx);
-		params = new LinearLayout.LayoutParams(VisionUtils.scalePixels(25), VisionUtils.scalePixels(25));
+		params = new LinearLayout.LayoutParams(VisionUtils.scalePixels(25),
+				VisionUtils.scalePixels(25));
 		miniImage.setLayoutParams(params);
 		miniImage.setScaleType(ScaleType.FIT_CENTER);
 		lay.addView(miniImage);
@@ -269,9 +297,10 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		lay2.setGravity(Gravity.CENTER_VERTICAL);
 		lay2.setPadding(VisionUtils.scalePixels(10), 0, 0, 0);
 		lay.addView(lay2);
-		
+
 		LinearLayout lay3 = new LinearLayout(ctx);
-		params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
 		params.setMargins(0, 0, VisionUtils.scalePixels(5), 0);
 		lay3.setLayoutParams(params);
 		lay3.setOrientation(LinearLayout.VERTICAL);
@@ -280,7 +309,8 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		lay.addView(lay3);
 
 		TextView title = new TextView(ctx);
-		params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT);
 		title.setLayoutParams(params);
 		title.setTextColor(0xff000000);
 		title.setTextSize(15);
@@ -289,7 +319,8 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		lay2.addView(title);
 
 		TextView text = new TextView(ctx);
-		params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT);
 		text.setLayoutParams(params);
 		text.setTextColor(0xff333333);
 		text.setTextSize(12);
@@ -298,13 +329,15 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		lay2.addView(text);
 
 		TextView distance = new TextView(ctx);
-		params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
 		distance.setLayoutParams(params);
 		distance.setTextColor(0xff333333);
 		lay3.addView(distance);
-		
+
 		ImageView catImage = new ImageView(ctx);
-		params = new LinearLayout.LayoutParams(VisionUtils.scalePixels(15), VisionUtils.scalePixels(15));
+		params = new LinearLayout.LayoutParams(VisionUtils.scalePixels(15),
+				VisionUtils.scalePixels(15));
 		catImage.setLayoutParams(params);
 		catImage.setScaleType(ScaleType.FIT_CENTER);
 		lay3.addView(catImage);
@@ -313,7 +346,7 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		lay.setBackgroundDrawable(this.getListItemBackground(ctx));
 
 		miniImage.setImageResource(R.drawable.logo_g);
-		
+
 		title.setText(Html.fromHtml(this.title));
 		title.setTextColor(0xff000000);
 
@@ -323,7 +356,6 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		distance.setText(VisionUtils.getDistanceToString(this.distance));
 		distance.setTextColor(0xff000000);
 
-		
 		Vector<VisionCategory> cats = this.getCategories();
 		if (cats != null && cats.size() > 0) {
 			int i = 0;
@@ -340,12 +372,13 @@ public class CustomGeoPoi extends VisionGeoPoi {
 		return ll;
 
 	}
-	
+
 	@Override
 	public void onClick(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onClick(activity);
-		final Intent intent = new Intent(activity, CustomGeoPoiClickActivity.class);
+		final Intent intent = new Intent(activity,
+				CustomGeoPoiClickActivity.class);
 		activity.startActivity(intent);
 	}
 

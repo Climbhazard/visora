@@ -22,7 +22,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	private ProgressBar progress;
 
-	private Button bt_default_core;
+//	private Button bt_default_core;
 	private Button bt_custom_core;
 	public Boolean custom = false;
 
@@ -58,10 +58,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		progress = (ProgressBar) this.findViewById(R.id.progressBar);
 
-		bt_default_core = (Button) this.findViewById(R.id.default_core);
-		bt_default_core.setOnClickListener(this);
+//		bt_default_core = (Button) this.findViewById(R.id.default_core);
+//		bt_default_core.setOnClickListener(this);
 		bt_custom_core = (Button) this.findViewById(R.id.custom_core);
-		bt_custom_core.setOnClickListener(this);
+//		bt_custom_core.setOnClickListener(this);
 
 		l_buttonsDefault = (LinearLayout) this
 				.findViewById(R.id.buttonsDefault);
@@ -103,26 +103,28 @@ public class MainActivity extends Activity implements OnClickListener {
 		bt_launch.setOnClickListener(this);
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		if (v == bt_default_core) {
-			custom = false;
-			l_buttonsDefault.setVisibility(View.VISIBLE);
-			l_buttonsCustom.setVisibility(View.GONE);
-			bt_default_core.setBackgroundResource(R.drawable.bt_selected);
-			bt_custom_core.setBackgroundResource(R.drawable.bt_normal);
-			sw_map.setEnabled(false);
-			sw_map.setImageResource(R.drawable.switch_dis);
-			sw_list.setEnabled(false);
-			sw_list.setImageResource(R.drawable.switch_dis);
-			sw_teleport.setEnabled(false);
-			sw_teleport.setImageResource(R.drawable.switch_dis);
-		} else if (v == bt_custom_core) {
+//		if (v == bt_default_core) {
+//			custom = false;
+//			l_buttonsDefault.setVisibility(View.VISIBLE);
+//			l_buttonsCustom.setVisibility(View.GONE);
+//			bt_default_core.setBackgroundResource(R.drawable.bt_selected);
+//			bt_custom_core.setBackgroundResource(R.drawable.bt_normal);
+//			sw_map.setEnabled(false);
+//			sw_map.setImageResource(R.drawable.switch_dis);
+//			sw_list.setEnabled(false);
+//			sw_list.setImageResource(R.drawable.switch_dis);
+//			sw_teleport.setEnabled(false);
+//			sw_teleport.setImageResource(R.drawable.switch_dis);
+//		} else
+			if (v == bt_custom_core) {
 			custom = true;
 			l_buttonsDefault.setVisibility(View.GONE);
 			l_buttonsCustom.setVisibility(View.VISIBLE);
-			bt_default_core.setBackgroundResource(R.drawable.bt_normal);
+//			bt_default_core.setBackgroundResource(R.drawable.bt_normal);
 			bt_custom_core.setBackgroundResource(R.drawable.bt_selected);
 			sw_map.setEnabled(true);
 			sw_map.setImageResource(R.drawable.switch_on);
@@ -133,12 +135,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			sw_teleport.setEnabled(true);
 			sw_teleport.setImageResource(R.drawable.switch_on);
 			teleport = true;
-		} else if (v == bt_default_files) {
-			data = DataSource.DEFAULT_FILES;
-			bt_default_files.setBackgroundResource(R.drawable.bt_selected);
+		} else if (v == bt_generated_data) {
+			data = DataSource.GENERATED_DATA;
+			bt_default_files.setBackgroundResource(R.drawable.bt_normal);
 			bt_demo_files.setBackgroundResource(R.drawable.bt_normal);
 			bt_web_files.setBackgroundResource(R.drawable.bt_normal);
-			bt_generated_data.setBackgroundResource(R.drawable.bt_normal);
+			bt_generated_data.setBackgroundResource(R.drawable.bt_selected);
 		} else if (v == bt_demo_files) {
 			data = DataSource.DEMO_FILES;
 			bt_default_files.setBackgroundResource(R.drawable.bt_normal);
@@ -151,12 +153,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			bt_demo_files.setBackgroundResource(R.drawable.bt_normal);
 			bt_web_files.setBackgroundResource(R.drawable.bt_selected);
 			bt_generated_data.setBackgroundResource(R.drawable.bt_normal);
-		} else if (v == bt_generated_data) {
-			data = DataSource.GENERATED_DATA;
-			bt_default_files.setBackgroundResource(R.drawable.bt_normal);
+		} else if (v == bt_default_files) {
+			data = DataSource.DEFAULT_FILES;
+			bt_default_files.setBackgroundResource(R.drawable.bt_selected);
 			bt_demo_files.setBackgroundResource(R.drawable.bt_normal);
 			bt_web_files.setBackgroundResource(R.drawable.bt_normal);
-			bt_generated_data.setBackgroundResource(R.drawable.bt_selected);
+			bt_generated_data.setBackgroundResource(R.drawable.bt_normal);
 		} else if (v == bt_preload_data) {
 			preload = true;
 			bt_preload_data.setBackgroundResource(R.drawable.bt_selected);
@@ -277,6 +279,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			progress.setVisibility(View.GONE);
 		}
 
+		@SuppressWarnings("static-access")
 		@Override
 		protected Void doInBackground(Void... params) {
 			switch (data) {
@@ -318,7 +321,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			VisionGeoPoi poi = new VisionGeoPoi();
 			poi.setId("0001");
-			poi.setTitle("Puerta del Sol");
+			poi.setTitle("Facultad de Letras");
 			poi.setSubtitle("Puerta del Sol 1, Madrid");
 			poi.setLatitude(40.41687);
 			poi.setLongitude(-3.703412);
@@ -328,10 +331,30 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			poi = new VisionGeoPoi();
 			poi.setId("0002");
-			poi.setTitle("Eiffel Tower");
+			poi.setTitle("Facultad de Letras");
 			poi.setSubtitle("Champ de Mars, 5, Paris, France");
-			poi.setLatitude(48.858391);
+			poi.setLatitude(148.858391);
 			poi.setLongitude(2.293739);
+			poi.setWeb("http://en.wikipedia.org/wiki/Torre_Eiffel");
+			poi.getCategories().add(turistCategory);
+			VisionCore.core.model.getPois().add(poi);
+			
+			poi = new VisionGeoPoi();
+			poi.setId("0003");
+			poi.setTitle("Facultad de Psicología");
+			poi.setSubtitle("Champ de Mars, 5, Paris, France");
+			poi.setLatitude(65.858391);
+			poi.setLongitude(99.293739);
+			poi.setWeb("http://en.wikipedia.org/wiki/Torre_Eiffel");
+			poi.getCategories().add(turistCategory);
+			VisionCore.core.model.getPois().add(poi);
+			
+			poi = new VisionGeoPoi();
+			poi.setId("0004");
+			poi.setTitle("Facultad de Matemáticas");
+			poi.setSubtitle("Champ de Mars, 5, Paris, France");
+			poi.setLatitude(120.858391);
+			poi.setLongitude(6.293739);
 			poi.setWeb("http://en.wikipedia.org/wiki/Torre_Eiffel");
 			poi.getCategories().add(turistCategory);
 			VisionCore.core.model.getPois().add(poi);
@@ -356,6 +379,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			progress.setVisibility(View.GONE);
 		}
 
+		@SuppressWarnings("static-access")
 		@Override
 		protected Void doInBackground(Void... params) {
 			if (preload) {

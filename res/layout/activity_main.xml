@@ -20,7 +20,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:src="@drawable/logo_vision" />
+                android:src="@drawable/logo_vision"
+                android:visibility="invisible" />
 
             <LinearLayout
                 android:layout_width="300dp"
@@ -28,55 +29,46 @@
                 android:layout_gravity="center"
                 android:background="@drawable/options_box"
                 android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="5dp"
-                    android:text="Vision Core"
-                    android:textColor="#FF000000"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" >
 
-                    <Button
-                        android:id="@+id/default_core"
-                        android:layout_width="128dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/bt_selected"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="2dp"
-                        android:paddingTop="2dp"
-                        android:text="Use default Vision Core"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
+                    <!-- <Button -->
+                    <!-- android:id="@+id/default_core" -->
+                    <!-- android:layout_width="128dp" -->
+                    <!-- android:layout_height="35dp" -->
+                    <!-- android:layout_gravity="center" -->
+                    <!-- android:layout_margin="5dp" -->
+                    <!-- android:background="@drawable/bt_selected" -->
+                    <!-- android:paddingLeft="10dp" -->
+                    <!-- android:paddingRight="10dp" -->
+                    <!-- android:paddingBottom="2dp" -->
+                    <!-- android:paddingTop="2dp" -->
+                    <!-- android:text="Use default Vision Core" -->
+                    <!-- android:textColor="#FFFFFFFF" -->
+                    <!-- android:textSize="12sp" /> -->
 
                     <Button
                         android:id="@+id/custom_core"
-                        android:layout_width="128dp"
-                        android:layout_height="35dp"
+                        android:layout_width="130dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:background="@drawable/bt_normal"
+                        android:clickable="false"
                         android:padding="2dp"
-                        android:text="Use custom Vision Core"
+                        android:text="VisoRA"
                         android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
+                        android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layoutSource"
                 android:layout_width="300dp"
-                android:layout_height="92dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/options_box"
                 android:orientation="vertical" >
@@ -86,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:text="Data Source"
+                    android:text="Fuente de Datos"
                     android:textColor="#FF000000"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -104,11 +96,27 @@
                         android:layout_gravity="center"
                         android:layout_margin="3dp"
                         android:background="@drawable/bt_selected"
+                        android:paddingBottom="2dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:paddingBottom="2dp"
                         android:paddingTop="2dp"
                         android:text="Default files"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="12sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/web_files"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1.21"
+                        android:background="@drawable/bt_normal"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="2dp"
+                        android:text="Archivos web"
                         android:textColor="#FFFFFFFF"
                         android:textSize="12sp" />
 
@@ -119,43 +127,14 @@
                         android:layout_gravity="center"
                         android:layout_margin="3dp"
                         android:background="@drawable/bt_normal"
+                        android:paddingBottom="2dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:paddingBottom="2dp"
                         android:paddingTop="2dp"
                         android:text="Demo files"
                         android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
-
-                    <Button
-                        android:id="@+id/web_files"
-                        android:layout_width="62dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="3dp"
-                        android:background="@drawable/bt_normal"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="2dp"
-                        android:paddingTop="2dp"
-                        android:text="Web files"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
-
-                    <Button
-                        android:id="@+id/generated_data"
-                        android:layout_width="62dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="3dp"
-                        android:background="@drawable/bt_normal"
-                        android:paddingLeft="2dp"
-                        android:paddingRight="2dp"
-                        android:paddingBottom="2dp"
-                        android:paddingTop="2dp"
-                        android:text="Generated data"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -189,15 +168,31 @@
                         android:textColor="#FFFFFFFF"
                         android:textSize="12sp" />
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/generated_data"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/bt_normal"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingTop="2dp"
+                    android:text="Datos generados"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layoutManager"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:background="@drawable/options_box"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:visibility="invisible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -279,10 +274,11 @@
             <LinearLayout
                 android:id="@+id/layoutLanguage"
                 android:layout_width="300dp"
-                android:layout_height="91dp"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
                 android:background="@drawable/options_box"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:visibility="invisible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -328,23 +324,25 @@
 
             <Button
                 android:id="@+id/launch"
-                android:layout_width="150dp"
-                android:layout_height="35dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@drawable/bt_normal"
                 android:padding="2dp"
-                android:text="Launch Vision AR"
+                android:text="Toque suavemente para lanzar"
                 android:textColor="#FFFFFFFF"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:padding="10dp"
         android:layout_centerInParent="true"
         android:background="#bb000000"
+        android:padding="10dp"
         android:visibility="gone" />
+
 </RelativeLayout>

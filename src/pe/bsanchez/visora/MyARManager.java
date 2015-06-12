@@ -8,7 +8,6 @@ import com.geomobile.arcore.ar.VisionARActivity;
 import com.geomobile.arcore.ar.VisionARManager;
 import com.geomobile.arcore.ar.VisionCameraView;
 import com.geomobile.arcore.model.VisionAction;
-import com.geomobile.arcore.model.VisionImage;
 import com.geomobile.arcore.utils.VisionLanguage;
 
 public class MyARManager extends VisionARManager {

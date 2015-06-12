@@ -15,6 +15,7 @@ public class CustomGeoPoiClickActivity extends Activity implements OnClickListen
 	private LinearLayout b_back;
 	private CustomGeoPoi poi;
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -1,7 +1,6 @@
 package pe.bsanchez.visora;
 
 import android.content.Context;
-import android.location.Location;
 
 import com.geomobile.arcore.model.VisionModelManager;
 
