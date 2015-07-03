@@ -38,7 +38,7 @@ public class VisoraGeoPoi extends VisionGeoPoi {
 		LinearLayout lay = new LinearLayout(ctx);
 		lay.setOrientation(LinearLayout.VERTICAL);
 		lay.setLayoutParams(new LinearLayout.LayoutParams(256, 128));
-//		lay.setPadding(32, 14, 32, 8);
+		// lay.setPadding(32, 14, 32, 8);
 		lay.setPadding(32, 8, 32, 8);
 		lay.setBackgroundDrawable(this.getPanelBackground(ctx));
 		lay.layout(0, 0, 256, 128);
@@ -46,11 +46,11 @@ public class VisoraGeoPoi extends VisionGeoPoi {
 		TextView vista = new TextView(ctx);
 		vista.setLayoutParams(new LinearLayout.LayoutParams(180, LayoutParams.WRAP_CONTENT));
 		vista.setTextColor(0xffffffff);
-//		vista.setTextSize((int) (25 / density));
+		// vista.setTextSize((int) (25 / density));
 		vista.setTextSize((int) (18 / density));
 		vista.setText(this.title);
 		vista.setGravity(Gravity.CENTER_HORIZONTAL);
-//		vista.setMaxLines(2);
+		// vista.setMaxLines(2);
 		vista.setMaxLines(3);
 		vista.layout(40, 5, 210, 100);
 		lay.addView(vista);
@@ -96,7 +96,8 @@ public class VisoraGeoPoi extends VisionGeoPoi {
 						&& categories.get(i).getIcon().getImage(null, true, false, true) != null) {
 					iv = new ImageView(ctx);
 					iv.setLayoutParams(new LayoutParams((int) (30 / density), (int) (30 / density)));
-					iv.setScaleType(ScaleType.CENTER_INSIDE);
+					// iv.setScaleType(ScaleType.CENTER_INSIDE);
+					iv.setScaleType(ScaleType.FIT_START);
 					iv.setImageDrawable(categories.get(i).getIcon()
 							.getImage(null, true, false, true));
 					icons.addView(iv);
@@ -143,9 +144,11 @@ public class VisoraGeoPoi extends VisionGeoPoi {
 		vista = new TextView(ctx);
 		vista.setLayoutParams(new LinearLayout.LayoutParams(180, LayoutParams.WRAP_CONTENT));
 		vista.setTextColor(0xffffffff);
-		vista.setTextSize((int) (23 / density));
+		// vista.setTextSize((int) (23 / density));
+		vista.setTextSize((int) (16 / density));
 		vista.setGravity(Gravity.CENTER);
-		vista.setMaxLines(2);
+		// vista.setMaxLines(2);
+		vista.setMaxLines(3);
 		vista.setText(this.title);
 		vista.layout(32, 57, 170, 120);
 		lay.addView(vista);

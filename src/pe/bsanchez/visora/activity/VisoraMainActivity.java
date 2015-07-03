@@ -34,9 +34,15 @@ public class VisoraMainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		VisionCore vs = new VisionCore(this.getApplicationContext(), true);
+
 		VisionCore.core.ar = new VisoraARManager(false, true, false);
 		VisionCore.core.ar.setPrefixForImages("visora_");
+
 		VisionCore.core.model = new VisoraModelManager();
+
+		VisionCore.core.configuration.setMaxPoisToShow(17);
+		VisionCore.core.configuration.setUpdateDistance(50);
+		VisionCore.core.configuration.setLanguage("_es");
 		VisionCore.core.configuration.setRadarPosition(VisionConfiguration.RADAR_POSITION_LEFT);
 		VisionCore.core.configuration.showAppLogo(true);
 

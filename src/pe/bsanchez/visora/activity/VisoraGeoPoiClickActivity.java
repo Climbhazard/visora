@@ -35,7 +35,6 @@ public class VisoraGeoPoiClickActivity extends Activity implements OnClickListen
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		if (v == b_back) {
 			finish();
 		}
