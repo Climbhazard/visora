@@ -18,22 +18,24 @@
             android:src="@drawable/vision_icon_back" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonBack"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="POI Title"
+        android:textColor="#FF000000" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:gravity="center"
-            android:maxLines="2"
-            android:text="POI Title"
-            android:textColor="#FF000000" />
 
         <TextView
             android:id="@+id/desc"

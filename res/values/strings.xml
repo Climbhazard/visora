@@ -11,5 +11,6 @@
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
     <string name="empty"></string>
+    <string name="poiTitle">POI Title</string>
 
 </resources>
