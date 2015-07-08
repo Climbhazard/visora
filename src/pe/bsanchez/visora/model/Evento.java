@@ -3,11 +3,41 @@ package pe.bsanchez.visora.model;
 import android.graphics.drawable.Drawable;
 
 public class Evento {
+	protected Drawable afiche;
+	protected String titulo;
+	protected String descripcion;
+	protected long id;
 
-	private String categoriaId;
-	private Drawable afiche;
-	private String titulo;
-	private String descripcion;
+	public Evento(Drawable afiche, String titulo, String descripcion) {
+		super();
+		this.afiche = afiche;
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+	}
+
+	public Evento(Drawable afiche, String nombre, String cargo, long id) {
+		super();
+		this.afiche = afiche;
+		this.titulo = nombre;
+		this.descripcion = cargo;
+		this.id = id;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Drawable getAfiche() {
+		return afiche;
+	}
+
+	public void setAfiche(Drawable afiche) {
+		this.afiche = afiche;
+	}
 
 	public String getTitulo() {
 		return titulo;
@@ -23,22 +53,6 @@ public class Evento {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public String getCategoriaId() {
-		return categoriaId;
-	}
-
-	public void setCategoriaId(String categoriaId) {
-		this.categoriaId = categoriaId;
-	}
-
-	public Drawable getAfiche() {
-		return afiche;
-	}
-
-	public void setAfiche(Drawable afiche) {
-		this.afiche = afiche;
 	}
 
 }

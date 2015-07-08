@@ -15,6 +15,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/empty"
             android:src="@drawable/vision_icon_back" />
     </LinearLayout>
 
@@ -27,7 +28,7 @@
         android:layout_margin="30dp"
         android:gravity="center"
         android:maxLines="2"
-        android:text="POI Title"
+        android:text="@string/poiTitle"
         android:textColor="#FF000000" />
 
     <LinearLayout
@@ -44,7 +45,7 @@
             android:layout_margin="30dp"
             android:gravity="center"
             android:maxLines="2"
-            android:text="Implements here you custom activity for POI details"
+            android:text="@string/altitude"
             android:textColor="#FF000000" />
     </LinearLayout>
 

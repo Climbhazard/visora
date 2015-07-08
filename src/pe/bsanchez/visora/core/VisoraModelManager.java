@@ -118,6 +118,7 @@ public class VisoraModelManager extends VisionModelManager {
 		BIOLOGICAS.setLongitude(-77.081976);
 		BIOLOGICAS.setWeb("http://biologia.unmsm.edu.pe/");
 		BIOLOGICAS.getCategories().add(cultural);
+		BIOLOGICAS.getCategories().add(politico);
 		newPois.add(BIOLOGICAS);
 
 		VisoraGeoPoi CONTABLES = new VisoraGeoPoi();
@@ -128,6 +129,7 @@ public class VisoraModelManager extends VisionModelManager {
 		CONTABLES.setLongitude(-77.080452);
 		CONTABLES.setWeb("http://contabilidad.unmsm.edu.pe/");
 		CONTABLES.getCategories().add(cultural);
+		CONTABLES.getCategories().add(social);
 		newPois.add(CONTABLES);
 
 		VisoraGeoPoi ECONOMICAS = new VisoraGeoPoi();
@@ -138,6 +140,7 @@ public class VisoraModelManager extends VisionModelManager {
 		ECONOMICAS.setLongitude(-77.081187);
 		ECONOMICAS.setWeb("http://economia.unmsm.edu.pe/");
 		ECONOMICAS.getCategories().add(cultural);
+		ECONOMICAS.getCategories().add(deportivo);
 		newPois.add(ECONOMICAS);
 
 		VisoraGeoPoi FISICAS = new VisoraGeoPoi();
@@ -148,6 +151,7 @@ public class VisoraModelManager extends VisionModelManager {
 		FISICAS.setLongitude(-77.081764);
 		FISICAS.setWeb("http://fisica.unmsm.edu.pe/");
 		FISICAS.getCategories().add(cultural);
+		FISICAS.getCategories().add(social);
 		newPois.add(FISICAS);
 
 		VisoraGeoPoi MATEMATICAS = new VisoraGeoPoi();
@@ -158,6 +162,7 @@ public class VisoraModelManager extends VisionModelManager {
 		MATEMATICAS.setLongitude(-77.082287);
 		MATEMATICAS.setWeb("http://matematicas.unmsm.edu.pe/");
 		MATEMATICAS.getCategories().add(cultural);
+		MATEMATICAS.getCategories().add(deportivo);
 		newPois.add(MATEMATICAS);
 
 		VisoraGeoPoi SOCIALES = new VisoraGeoPoi();
@@ -168,6 +173,7 @@ public class VisoraModelManager extends VisionModelManager {
 		SOCIALES.setLongitude(-77.081670);
 		SOCIALES.setWeb("http://sociales.unmsm.edu.pe/");
 		SOCIALES.getCategories().add(cultural);
+		SOCIALES.getCategories().add(politico);
 		newPois.add(SOCIALES);
 
 		VisoraGeoPoi DERECHO = new VisoraGeoPoi();
@@ -178,6 +184,7 @@ public class VisoraModelManager extends VisionModelManager {
 		DERECHO.setLongitude(-77.080560);
 		DERECHO.setWeb("http://derecho2.unmsm.edu.pe/");
 		DERECHO.getCategories().add(cultural);
+		DERECHO.getCategories().add(social);
 		newPois.add(DERECHO);
 
 		VisoraGeoPoi EDUCACION = new VisoraGeoPoi();
@@ -188,6 +195,7 @@ public class VisoraModelManager extends VisionModelManager {
 		EDUCACION.setLongitude(-77.084771);
 		EDUCACION.setWeb("http://educacion.unmsm.edu.pe/");
 		EDUCACION.getCategories().add(cultural);
+		EDUCACION.getCategories().add(deportivo);
 		newPois.add(EDUCACION);
 
 		VisoraGeoPoi SISTEMAS = new VisoraGeoPoi();
@@ -210,17 +218,18 @@ public class VisoraModelManager extends VisionModelManager {
 		ELECTRONICA.setLongitude(-77.081389);
 		ELECTRONICA.setWeb("http://aulavirtual.electronica.unmsm.edu.pe/");
 		ELECTRONICA.getCategories().add(cultural);
+		ELECTRONICA.getCategories().add(deportivo);
 		newPois.add(ELECTRONICA);
 
 		VisoraGeoPoi GEOLOGICA = new VisoraGeoPoi();
 		GEOLOGICA.setId("0013");
-		GEOLOGICA
-				.setTitle("FACULTAD DE ING. GEOLÓGICA, MINERA, METALÚRGICA Y GEOGRÁFICA");
+		GEOLOGICA.setTitle("FACULTAD DE ING. GEOLÓGICA, MINERA, METALÚRGICA Y GEOGRÁFICA");
 		GEOLOGICA.setSubtitle("Ingenierías");
 		GEOLOGICA.setLatitude(-12.055441);
 		GEOLOGICA.setLongitude(-77.086115);
 		GEOLOGICA.setWeb("http://www.figmmg.edu.pe/");
 		GEOLOGICA.getCategories().add(cultural);
+		GEOLOGICA.getCategories().add(social);
 		newPois.add(GEOLOGICA);
 
 		VisoraGeoPoi INDUSTRIAL = new VisoraGeoPoi();
@@ -231,6 +240,7 @@ public class VisoraModelManager extends VisionModelManager {
 		INDUSTRIAL.setLongitude(-77.080959);
 		INDUSTRIAL.setWeb("http://industrial.unmsm.edu.pe/");
 		INDUSTRIAL.getCategories().add(cultural);
+		INDUSTRIAL.getCategories().add(politico);
 		newPois.add(INDUSTRIAL);
 
 		VisoraGeoPoi LETRAS = new VisoraGeoPoi();
@@ -241,6 +251,7 @@ public class VisoraModelManager extends VisionModelManager {
 		LETRAS.setLongitude(-77.081517);
 		LETRAS.setWeb("http://letras.unmsm.edu.pe/");
 		LETRAS.getCategories().add(cultural);
+		LETRAS.getCategories().add(deportivo);
 		newPois.add(LETRAS);
 
 		VisoraGeoPoi ODONTOLOGIA = new VisoraGeoPoi();
@@ -251,6 +262,7 @@ public class VisoraModelManager extends VisionModelManager {
 		ODONTOLOGIA.setLongitude(-77.085980);
 		ODONTOLOGIA.setWeb("http://odontologia-unmsm.edu.pe/");
 		ODONTOLOGIA.getCategories().add(cultural);
+		ODONTOLOGIA.getCategories().add(social);
 		newPois.add(ODONTOLOGIA);
 
 		VisoraGeoPoi PSICOLOGIA = new VisoraGeoPoi();
@@ -261,6 +273,7 @@ public class VisoraModelManager extends VisionModelManager {
 		PSICOLOGIA.setLongitude(-77.087077);
 		PSICOLOGIA.setWeb("http://psicologia.unmsm.edu.pe/");
 		PSICOLOGIA.getCategories().add(cultural);
+		PSICOLOGIA.getCategories().add(deportivo);
 		newPois.add(PSICOLOGIA);
 
 		VisoraGeoPoi QUIMICA = new VisoraGeoPoi();
@@ -271,9 +284,9 @@ public class VisoraModelManager extends VisionModelManager {
 		QUIMICA.setLongitude(-77.083697);
 		QUIMICA.setWeb("http://quimica.unmsm.edu.pe/");
 		QUIMICA.getCategories().add(cultural);
+		QUIMICA.getCategories().add(social);
 		newPois.add(QUIMICA);
 
 		pois = newPois;
 	}
-
 }
